@@ -4,10 +4,7 @@ from pywebio.exceptions import *
 from flask import Flask, send_from_directory
 from pywebio.platform.flask import webio_view
 import time
-import warnings
 
-
-warnings.filterwarnings('ignore')
 
 app = Flask(__name__)
 
