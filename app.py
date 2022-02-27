@@ -3,6 +3,8 @@ from pywebio.output import *
 from pywebio.exceptions import *
 from flask import Flask, send_from_directory
 from pywebio.platform.flask import webio_view
+import argparse
+from pywebio import start_server
 import time
 
 
@@ -411,6 +413,12 @@ def main():
     
 app.add_url_rule('/checkeligibility', 'webio_view', webio_view(main), methods = ['POST', 'GET', 'OPTIONS'])
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    args = parser.parse_args()
 
-if __name__ == "__main__":
-    app.run(host = "localhost", port = 80)
+    start_server(main, port=args.port)
+
+#if __name__ == "__main__":
+    #app.run(host = "localhost", port = 80)
