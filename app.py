@@ -107,7 +107,7 @@ def validateApplicationForm(data1):
         return('dob', 'Please ensure that your birth month is in between 01 and 12.')
     
     if birthYearVal < 1922 or birthYearVal > 1962:
-        return('dob', 'Please ensure that your birth year in in between 1922 and 1962.')
+        return('dob', 'Please ensure that your birth year is in between 1922 and 1962.')
     
     
     
